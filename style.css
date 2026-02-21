@@ -1,3 +1,6 @@
+/* ================================
+   GLOBAL RESET
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +22,9 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ================================
+   ANIMATED BLOBS
+================================ */
 .animated-bg {
   position: fixed;
   inset: 0;
@@ -44,9 +50,13 @@ body {
   to { transform: translate(50px,-50px); }
 }
 
+/* ================================
+   NAVBAR (DESKTOP)
+================================ */
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 10%;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
@@ -54,12 +64,29 @@ nav {
   top: 0;
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #f3f4f6;
+.logo {
+  font-weight: bold;
+  font-size: 18px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f3f4f6;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #bbbbbb;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
 .hero {
   text-align: center;
   padding: 120px 20px;
@@ -94,6 +121,7 @@ nav a {
   border-radius: 12px;
   text-decoration: none;
   margin: 10px;
+  display: inline-block;
 }
 
 .btn-main {
@@ -106,6 +134,9 @@ nav a {
   color: white;
 }
 
+/* ================================
+   SECTIONS
+================================ */
 .section {
   padding: 80px 10%;
   text-align: center;
@@ -124,6 +155,9 @@ nav a {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* ================================
+   CARDS
+================================ */
 .card {
   background: rgba(255,255,255,0.05);
   padding: 25px;
@@ -145,6 +179,9 @@ nav a {
   font-size: 12px;
 }
 
+/* ================================
+   CONTACT
+================================ */
 .contact-card {
   text-align: left;
 }
@@ -171,10 +208,43 @@ nav a {
   font-weight: 600;
 }
 
+/* FORM */
 form input, form textarea {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 8px;
   border: none;
+}
+
+/* =========================================
+   OPTION 3 – PROFESSIONAL MOBILE NAVBAR
+========================================= */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
 }
